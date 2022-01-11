@@ -1,0 +1,3 @@
+<jboss-web>
+  <context-root>/validation</context-root>
+</jboss-web>

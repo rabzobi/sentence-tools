@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="5d2d054b-5a01-4698-afcf-ee6548ca4de0" activeEnvironment="Default" name="SentenceTests" soapui-version="5.6.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="dad1f9d1-804e-4448-9d32-d35cf587a601" wsaVersion="NONE" name="SentenceServiceServiceSoapBinding" type="wsdl" bindingName="{http://sentence_tools.garland.co.za/}SentenceServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://getafix.garland.co.za:8787/validation/SentenceService?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://getafix.garland.co.za:8787/validation/SentenceService?wsdl"><con:part><con:url>http://getafix.garland.co.za:8787/validation/SentenceService?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="SentenceServiceService" targetNamespace="http://sentence_tools.garland.co.za/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://sentence_tools.garland.co.za/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://sentence_tools.garland.co.za/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="checkValidity" type="tns:checkValidity"/>
+      <xs:element name="checkValidityResponse" type="tns:checkValidityResponse"/>
+      <xs:complexType name="checkValidity">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="sentence" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="checkValidityResponse">
+        <xs:sequence>
+          <xs:element name="return" type="xs:boolean"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="checkValidity">
+    <wsdl:part element="tns:checkValidity" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="checkValidityResponse">
+    <wsdl:part element="tns:checkValidityResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="SentenceService">
+    <wsdl:operation name="checkValidity">
+      <wsdl:input message="tns:checkValidity" name="checkValidity"></wsdl:input>
+      <wsdl:output message="tns:checkValidityResponse" name="checkValidityResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="SentenceServiceServiceSoapBinding" type="tns:SentenceService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="checkValidity">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="checkValidity">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="checkValidityResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="SentenceServiceService">
+    <wsdl:port binding="tns:SentenceServiceServiceSoapBinding" name="SentenceServicePort">
+      <soap:address location="http://localhost:8787/validation/SentenceService"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://getafix.garland.co.za:8787/validation/SentenceService</con:endpoint></con:endpoints><con:operation id="f445e0ec-a959-4183-a39d-898e82085174" isOneWay="false" action="" name="checkValidity" bindingOperationName="checkValidity" type="Request-Response" outputName="checkValidityResponse" inputName="checkValidity" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9376c5d4-eebd-4504-85b0-a594362de60c" name="Hello world!"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://getafix.garland.co.za:8787/validation/SentenceService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://sentence_tools.garland.co.za/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sen:checkValidity>         
+         <sentence>Hello world!</sentence>
+      </sen:checkValidity>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sentence_tools.garland.co.za/SentenceService/checkValidity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="649694da-8eec-4ca2-9c0d-0a77077c40da" name="Testing testing one two three."><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://getafix.garland.co.za:8787/validation/SentenceService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://sentence_tools.garland.co.za/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sen:checkValidity>
+         <sentence>Testing testing one two three.</sentence>
+      </sen:checkValidity>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sentence_tools.garland.co.za/SentenceService/checkValidity"/><con:wsrmConfig version="1.2"/></con:call><con:call id="846c1e87-6d09-483f-a723-4953d2cdcc19" name="invalid sentence"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://getafix.garland.co.za:8787/validation/SentenceService</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:sen="http://sentence_tools.garland.co.za/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <sen:checkValidity>
+         <sentence>invalid sentence</sentence>
+      </sen:checkValidity>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://sentence_tools.garland.co.za/SentenceService/checkValidity"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
