@@ -101,7 +101,7 @@ public class SentenceTest extends TestCase {
 		assertTrue(Sentence.checkValidity("How do you do??"));		
 	}	
 	
-	public void testInvalidSentence11() {
+	public void testInvalidSentence13() {
 		assertFalse(Sentence.checkValidity(null));		
 	}	
 }
